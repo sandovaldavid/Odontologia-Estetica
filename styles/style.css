@@ -1,25 +1,24 @@
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #ffd700;
-    --text-color: #333333;
+    --primary-color: #1a73e8;
+    --secondary-color: #34a853;
+    --accent-color: #fbbc04;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --background-light: #f8f9fa;
     --white: #ffffff;
-    --light-gray: #f8f9fa;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--white);
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -27,123 +26,135 @@ h4,
 h5,
 h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    line-height: 1.3;
+    color: var(--text-primary);
 }
 
-/* Header styles */
-.header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/smile-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    padding: 4rem 0;
-    text-align: center;
+.main-nav {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
 }
 
-/* Button styles */
+.nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
 .btn {
-    display: inline-block;
     padding: 1rem 2rem;
     border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
     font-weight: 600;
-    margin: 0.5rem;
+    text-align: center;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--white);
+    box-shadow: var(--shadow-sm);
 }
 
-.btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
-/* Section styles */
-.section {
-    padding: 4rem 2rem;
-}
-
-.section:nth-child(even) {
-    background-color: var(--light-gray);
-}
-
-/* Treatment cards */
-.treatment-card {
+.benefit-item {
     background: var(--white);
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     padding: 2rem;
-    margin: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    text-align: center;
 }
 
-.treatment-card:hover {
+.benefit-item:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
 }
 
-/* FAQ accordion */
-.faq-item {
+.benefit-icon {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    display: block;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.section {
+    padding: 5rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FAQ Styling */
+.faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
 }
 
 .faq-question {
+    padding: 1.5rem;
+    background: var(--background-light);
     cursor: pointer;
-    padding: 1rem 0;
-    position: relative;
-}
-
-/* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.before-after {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+    font-weight: 600;
 }
 
 /* Footer */
 .footer {
-    background-color: var(--text-color);
+    background: var(--text-primary);
     color: var(--white);
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
 }
 
-.social-icons {
+/* Contact Float */
+.floating-contact {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 100;
+}
+
+.contact-item {
+    background: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 0.5rem;
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin: 2rem 0;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .header {
-        padding: 2rem 0;
-    }
-
-    .btn {
-        display: block;
-        width: 90%;
-        margin: 0.5rem auto;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Animations */
-@keyframes fadeIn {
+/* Modern Animations */
+@keyframes fadeUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -155,6 +166,27 @@ h6 {
     }
 }
 
-.animate-fade-in {
-    animation: fadeIn 0.8s ease forwards;
+[data-scroll="fade-up"] {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+/* Responsive Design Improvements */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        padding: 0 1rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .floating-contact {
+        right: 1rem;
+        bottom: 1rem;
+    }
 }
