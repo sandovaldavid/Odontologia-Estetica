@@ -160,6 +160,70 @@ h6 {
     bottom: -8px;
 }
 
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)),
+        url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+.header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    animation: fadeIn 1s ease-out;
+}
+
+.header .subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.header .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+.header .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header .btn-icon {
+    font-size: 1.2rem;
+}
+
 .btn {
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -248,19 +312,49 @@ h6 {
     z-index: 100;
 }
 
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .contact-item {
     background: var(--white);
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     box-shadow: var(--shadow-md);
-    margin-bottom: 0.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition);
+    gap: 0.75rem;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(-5px);
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.contact-item .icon {
+    font-size: 1.25rem;
 }
 
 /* Modern Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -296,6 +390,24 @@ h6 {
 
 /* Responsive Design Improvements */
 @media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        text-align: center;
+        min-height: 80vh;
+    }
+
+    .header-content {
+        padding: 1rem;
+    }
+
+    .header .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-item {
+        padding: 0.5rem 1rem;
+    }
     .nav-wrapper {
         padding: 0 1rem;
     }
