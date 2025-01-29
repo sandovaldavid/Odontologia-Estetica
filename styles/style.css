@@ -985,8 +985,10 @@ details[open] .faq-question::after {
         background: transparent;
     }
     .header {
+        height: 85vh;
         padding: 1rem;
         text-align: center;
+        justify-content: center;
         min-height: 80vh;
         flex-direction: column;
         gap: 1rem;
