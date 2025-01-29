@@ -991,7 +991,7 @@ details[open] .faq-question::after {
         padding: 1rem;
     }
 
-    .header .cta-buttons {
+    .header{
         flex-direction: column;
         gap: 1rem;
     }
@@ -1112,8 +1112,9 @@ details[open] .faq-question::after {
     }
 
     #cta .btn {
-        width: 100%;
+        text-align: center;
         padding: 1rem 2rem;
+        justify-content: center;
     }
 
     #cta h2 {
