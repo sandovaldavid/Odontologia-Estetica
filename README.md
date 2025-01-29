@@ -42,7 +42,9 @@ A modern, responsive website for a dental clinic specializing in aesthetic denti
 
 You can view the live demo at: [Website URL](https://odontologia-estetica.devprojects.tech)
 
-![Website Preview](/images/screenshot.png)
+| Desktop View | Mobile View |
+|-------------|-------------|
+| ![Desktop](/images/desktop-view.png) | ![Mobile](/images/mobile-view.png) |
 
 ## 🛠 Technologies
 
