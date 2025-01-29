@@ -124,42 +124,6 @@ h6 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-/* Hamburger Menu Styles */
-.hamburger {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--text-primary);
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: var(--text-primary);
-    transition: all 0.3s ease;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    bottom: -8px;
-}
-
 .header {
     min-height: 100vh;
     background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../images/hero-bg.png');
@@ -1003,6 +967,7 @@ details[open] .faq-question::after {
     }
     .nav-wrapper {
         padding: 0 1rem;
+        justify-content: center;
     }
 
     .section {
@@ -1011,10 +976,6 @@ details[open] .faq-question::after {
 
     .floating-contact {
         display: none;
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
     }
 
     .nav-links {
@@ -1153,26 +1114,5 @@ details[open] .faq-question::after {
     .footer .owner {
         margin-top: 2rem;
         padding-top: 1.5rem;
-    }
-
-    .hamburger,
-    .hamburger::before,
-    .hamburger::after {
-        width: 24px;
-        height: 2px;
-        background: var(--text-primary);
-        transition: all 0.3s ease;
-    }
-
-    .mobile-menu-toggle.active .hamburger {
-        background: transparent;
-    }
-
-    .mobile-menu-toggle.active .hamburger::before {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-menu-toggle.active .hamburger::after {
-        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
