@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #1a73e8;
-    --secondary-color: #34a853;
+    --primary-color: rgba(26, 115, 232, 0.6);
+    --secondary-color: rgba(51, 168, 82, 0.6);
     --accent-color: #fbbc04;
     --text-primary: #202124;
     --text-secondary: #5f6368;
@@ -162,8 +162,7 @@ h6 {
 
 .header {
     min-height: 100vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)),
-        url('../images/hero-bg.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../images/hero-bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -171,6 +170,7 @@ h6 {
     align-items: center;
     position: relative;
     padding: 2rem;
+    border-radius: var(--border-radius);
 }
 
 .header-content {
@@ -186,6 +186,11 @@ h6 {
     line-height: 1.2;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     animation: fadeIn 1s ease-out;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
 }
 
 .header .subtitle {
