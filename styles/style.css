@@ -287,6 +287,100 @@ h6 {
     margin: 0 auto;
 }
 
+/* Enhanced Treatments Section Styles */
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.treatment-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.treatment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-card span {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.treatment-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.treatment-card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.treatment-card:hover h3::after {
+    width: 100px;
+}
+
+.treatment-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Add a subtle gradient overlay on hover */
+.treatment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 0;
+    border-radius: var(--border-radius);
+}
+
+.treatment-card:hover::before {
+    opacity: 0.05;
+}
+
+/* Add animation for cards */
+.treatment-card {
+    animation: fadeIn 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.treatment-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.treatment-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
 /* FAQ Styling */
 .faq-item {
     border: 1px solid #e0e0e0;
@@ -459,5 +553,23 @@ h6 {
     .nav-cta {
         width: auto;
         margin: 0.5rem 2rem;
+    }
+
+    .treatments-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .treatment-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .treatment-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .treatment-card span {
+        font-size: 2.5rem;
     }
 }
