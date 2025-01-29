@@ -484,19 +484,101 @@ h6 {
     animation-delay: 0.4s;
 }
 
-/* FAQ Styling */
+/* FAQ Section Styles */
+#faq {
+    background: linear-gradient(135deg, rgba(26, 115, 232, 0.02), rgba(51, 168, 82, 0.02));
+    border-radius: var(--border-radius);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
 .faq-item {
-    border: 1px solid #e0e0e0;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--border-radius);
     margin-bottom: 1rem;
-    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .faq-question {
     padding: 1.5rem;
-    background: var(--background-light);
     cursor: pointer;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.faq-question::after {
+    content: '⌄';
+    position: absolute;
+    right: 1.5rem;
+    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+}
+
+details[open] .faq-question::after {
+    transform: rotate(180deg);
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    transform: translateY(-0.5rem);
+    opacity: 0;
+    animation: slideDown 0.3s ease forwards;
+}
+
+/* FAQ Animations */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FAQ Section Title */
+#faq h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#faq h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50px;
 }
 
 /* Footer */
@@ -697,4 +779,18 @@ h6 {
     .benefit-card span {
         font-size: 3rem;
         }
+
+    .faq-container {
+        margin: 1rem auto;
+    }
+
+    .faq-question {
+        padding: 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer {
+        padding: 0 1.25rem 1.25rem;
+        font-size: 0.9rem;
+    }
 }
